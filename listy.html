@@ -22,18 +22,60 @@
 	}
 </style></head>
 <body>
-    <body>
+    
         <h1>Shital Nasam builds a list</h1>
         <input type= "text" id= "first_input" name= "first_input" placeholder="text"><br><br>
 		<div class="flex-container" id="target">
-		  <div class= "listy">row item 1</div>   
-		  <div class= "listy">row item 2</div>  
-		  <div class= "listy">row item 3</div>  
+		  <div class="listy">row item 1</div>   
+		  <div class="listy">row item 2</div>  
+		  <div class="listy">row item 3</div>  
 		</div>
 	
 	<p> Press the button to create an new element of type div and then add it to the container.
 		</p>
 		<button onclick="makeNewDiv()">Add one</button>
+        <script>
+            function makeNewDiv(){
+		/* make the div and its text */
+
+        var listyItems=document.getElementsByClassName("listy")
+        var min=0;
+        var max=listyItems.length;
+		let element = document.createElement("div")
+        element.setAttribute("class","listy")
+		element.innerHTML = document.getElementById("first_input").value;
+    
+        if(listyItems.length >9){
+            var flag=0;
+            var i=0;
+              
+              for(var a of listyItems ){
+              // alert(a.innerHTML+" "+document.getElementById("first_input").value)
+                  if(a.innerHTML == document.getElementById("first_input").value){
+                      //alert("yes")
+                    flag=1;
+                    console.log("We are getting rid of duplicates.")
+                    listyItems[i].remove();
+                    i++;
+                  }
+
+              }
+              if(flag == 0){
+                var rand=Math.floor(Math.random()*(max-min)+min)
+              
+                      listyItems[rand].remove();
+                      console.log("We get rid of the first item.")
+                  }
+                  
+        }
+        
+
+		/* add it to the container */
+		document.getElementById('target').appendChild(element)
+		
+	}
+        </script>
         
 		
 </body>
+</html>
