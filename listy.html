@@ -36,7 +36,7 @@
 		<button onclick="makeNewDiv()">Add one</button>
         <script>
             function makeNewDiv(){
-		/* make the div and its text */
+		
 
         var listyItems=document.getElementsByClassName("listy")
         var min=0;
@@ -50,9 +50,9 @@
             var i=0;
               
               for(var a of listyItems ){
-              // alert(a.innerHTML+" "+document.getElementById("first_input").value)
+            
                   if(a.innerHTML == document.getElementById("first_input").value){
-                      //alert("yes")
+                      
                     flag=1;
                     console.log("We are getting rid of duplicates.")
                     listyItems[i].remove();
@@ -70,7 +70,7 @@
         }
         
 
-		/* add it to the container */
+		
 		document.getElementById('target').appendChild(element)
 		
 	}
