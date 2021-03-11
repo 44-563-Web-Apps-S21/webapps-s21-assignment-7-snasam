@@ -22,14 +22,22 @@
 
   <script>
        myTime = undefined;
+       
        var min=2
     var max=10
-
 function recordReact() {
   myTime = Date.now();
   console.log("Time : " + myTime);
 
 }
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+
+
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
