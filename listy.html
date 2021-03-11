@@ -35,6 +35,8 @@
 		</p>
 		<button onclick="makeNewDiv()">Add one</button>
         <script>
+            var min=0;
+        var max=listyItems.length;
             function makeNewDiv(){
 		
 
@@ -58,6 +60,12 @@
                     i++;
                   }
 
+              }
+              if(flag == 0){
+                var r=Math.floor(Math.random()*(max-min)+min)
+              
+                      listyItems[r].remove();
+                      console.log("We get rid of first item.")
               }
               
 
